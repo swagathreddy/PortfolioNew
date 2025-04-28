@@ -227,7 +227,7 @@ const SideNavigation: React.FC = () => {
               <span className="text-lg">𝕏</span>
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/swagathreddy"
+              href="https://linkedin.com/in/swagathreddykasula"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-300 hover:bg-primary-500 hover:text-white transition-all duration-300"
