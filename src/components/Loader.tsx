@@ -32,12 +32,11 @@ const Loader: React.FC = () => {
 
   // Array of creative loading messages related to portfolio/character
   const loadingMessages = [
-    "Crafting digital experiences...",
-    "Preparing creative solutions...",
-    "Initializing innovation mode...",
-    "Gathering skills and projects...",
-    "Curating my best work for you...",
-    "Transforming ideas into reality..."
+    "Crafting Digital Experiences...",
+    "Preparing Creative Solutions...",
+    "Initializing Innovation Mode...",
+    "Curating My Best Work For You...",
+    "Transforming Ideas Into Reality..."
   ];
 
   // Randomly select one message
