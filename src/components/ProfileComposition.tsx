@@ -145,17 +145,17 @@ const ProfileComposition: React.FC = () => {
       
       {/* Floating code elements - improved positioning for all screen sizes */}
       <FloatingCodeElement 
-        code="<Python/>" 
+        code="<Designer/>" 
         className="absolute top-6 sm:top-8 md:top-10 -left-2 sm:left-0 bg-green-900/50 block" 
         dataDepth="2"
       />
       <FloatingCodeElement 
-        code="<React/>" 
+        code="<Problem Solver/>" 
         className="absolute bottom-12 sm:bottom-14 md:bottom-16 lg:bottom-20 left-4 sm:left-6 md:left-8 lg:left-10 bg-blue-900/50 block" 
         dataDepth="1.8"
       />
       <FloatingCodeElement 
-        code="<AI/>" 
+        code="<Coder/>" 
         className="absolute top-1/3 right-1 sm:right-2 md:right-3 lg:right-5 bg-purple-900/50 block"
         dataDepth="1.5"
       />
