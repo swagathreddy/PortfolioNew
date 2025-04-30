@@ -186,7 +186,7 @@ const HomePage = () => {
     <MarqueeText 
       text="DESIGN WITH EMPATHY • CODE WITH PASSION • INNOVATE WITH PURPOSE" 
       direction="left" 
-      opacity={0.05}
+      opacity={0.08}
       size="text-7xl md:text-8xl lg:text-9xl" 
       speed={50}
     />
