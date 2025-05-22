@@ -1,6 +1,6 @@
 import noteDropImage from '../static/Notedrop.png';
 import agrivoyage from '../static/AgirVoyage.png';
-import escaperoom from '../static/Escaperoom.png';
+import escaperoom from '../static/thinkandescape.png';
 import Transit from '../static/Transit.png';
 export const projects = [
   {
