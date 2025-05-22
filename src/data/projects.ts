@@ -14,7 +14,7 @@ export const projects = [
     outcome: 'The platform achieved 85% student engagement and demonstrated a 40% improvement in learning outcomes compared to traditional methods. The AI-driven approach allowed for personalized learning paths that adapted to each student\'s pace and style.',
     image: escaperoom,
     skills: ['Python', 'Django', 'NLP', 'LLM', 'Diffusion Model'],
-    demoLink: 'https://escape-production.up.railway.app/',
+    demoLink: 'https://thinkandescape.vercel.app/',
     githubLink: 'https://github.com/swagathreddy/escape',
     type: 'AI Educational Platform',
     timeline: '2024',
