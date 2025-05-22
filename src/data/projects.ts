@@ -11,7 +11,7 @@ export const projects = [
     problem: 'Traditional educational platforms often struggle to maintain engagement and fail to offer personalized learning experiences. Our challenge was to build an intelligent, interactive platform that adapts to users’ age and interest, while making learning both fun and effective.',
     research: 'Through market analysis and testing, we found that combining real-time LLM responses with visual storytelling significantly boosted engagement across age groups. Personalized game flows and age-aware difficulty levels led to measurable improvements in retention and learning outcomes.',
     process: 'Using agile methodology, we developed the platform in iterative phases: LLM integration via DeepSeek for theme, puzzle, and answer generation; Stable Diffusion for dynamic image rendering; and Django session management for adaptive learning paths. We also incorporated fuzzy matching and NLP libraries like SpaCy for smarter user input handling.',
-    outcome: 'The platform achieved 85% user engagement and improved learning comprehension by 40%. By tailoring puzzles and visuals based on user age and responses, Think and Escape showcased the powerful impact of LLMs in education and interactive digital experiences.'
+    outcome: 'The platform achieved 85% user engagement and improved learning comprehension by 40%. By tailoring puzzles and visuals based on user age and responses, Think and Escape showcased the powerful impact of LLMs in education and interactive digital experiences.',
     image: escaperoom,
     skills: ['Python', 'Django', 'NLP', 'LLM', 'Diffusion Model'],
     demoLink: 'https://thinkandescape.vercel.app/',
