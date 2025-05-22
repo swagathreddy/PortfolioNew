@@ -6,12 +6,12 @@ export const projects = [
   {
     id: 'escape-room-chatbot',
     title: 'Escape Room Chatbot',
-    description: 'AI-Powered Learning Tool designed to create interactive escape room experiences for educational purposes.',
-    overview: 'Escape Room Chatbot is an innovative AI-powered learning platform that secured second place in a competitive hackathon. It leverages advanced NLP techniques to create engaging, educational escape room scenarios that adapt to each user.',
-    problem: 'Traditional educational tools often fail to engage students effectively. The challenge was to create an immersive learning environment that could maintain high engagement while delivering educational content.',
-    research: 'We studied existing educational platforms and identified that gamification combined with AI personalization created the highest engagement rates. Our research showed that narrative-driven experiences with adaptive difficulty resulted in 40% better learning outcomes.',
-    process: 'The development followed an agile methodology with weekly sprints. We built the core NLP engine first, then developed the escape room scenarios, and finally integrated the difficulty adaptation algorithms based on user interaction patterns.',
-    outcome: 'The platform achieved 85% student engagement and demonstrated a 40% improvement in learning outcomes compared to traditional methods. The AI-driven approach allowed for personalized learning paths that adapted to each student\'s pace and style.',
+    description: 'LLM-Powered Escape Room Learning Platform that adapts to user age and interaction, delivering personalized educational experiences through AI storytelling and visual generation.',
+    overview: 'Think and Escape is a next-gen AI learning platform that blends gamification with large language models (LLMs) to create dynamic, age-specific escape room adventures. It secured second place in the TEJAS_2025 hackathon for its innovative use of DeepSeek and Stable Diffusion to enhance engagement and comprehension.',
+    problem: 'Traditional educational platforms often struggle to maintain engagement and fail to offer personalized learning experiences. Our challenge was to build an intelligent, interactive platform that adapts to users’ age and interest, while making learning both fun and effective.',
+    research: 'Through market analysis and testing, we found that combining real-time LLM responses with visual storytelling significantly boosted engagement across age groups. Personalized game flows and age-aware difficulty levels led to measurable improvements in retention and learning outcomes.',
+    process: 'Using agile methodology, we developed the platform in iterative phases: LLM integration via DeepSeek for theme, puzzle, and answer generation; Stable Diffusion for dynamic image rendering; and Django session management for adaptive learning paths. We also incorporated fuzzy matching and NLP libraries like SpaCy for smarter user input handling.',
+    outcome: 'The platform achieved 85% user engagement and improved learning comprehension by 40%. By tailoring puzzles and visuals based on user age and responses, Think and Escape showcased the powerful impact of LLMs in education and interactive digital experiences.'
     image: escaperoom,
     skills: ['Python', 'Django', 'NLP', 'LLM', 'Diffusion Model'],
     demoLink: 'https://thinkandescape.vercel.app/',
