@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, ChevronRight, Code } from 'lucide-react';
+import { ChevronRight, Code } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ThreeCanvas from '../components/ThreeCanvas';
 import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
+import FreelanceProjectCard from '../components/FreelanceProjectCard';
 import { projects } from '../data/projects';
+import { freelanceProjects } from '../data/freelanceProjects';
 import SkillsPreview from '../components/SkillsPreview';
 import ProfileComposition from '../components/ProfileComposition';
 import MarqueeText from '../components/MarqueeText';
-import profileImage from '../static/Swagath.jpg';
-
-// Rest of your imports and component definitions...
 
 // Badge component with proper icon handling
 interface BadgeProps {
@@ -19,7 +17,7 @@ interface BadgeProps {
   icon?: React.ReactNode;
 }
 
-const Badge: React.FC<BadgeProps> = ({ text, icon = null }) => {
+const Badge = ({ text, icon = null }: BadgeProps) => {
   return (
     <motion.div 
       className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium text-white"
@@ -62,8 +60,6 @@ const ParticleField = () => {
 };
 
 const HomePage = () => {
-  const [userImage, setUserImage] = useState(null);
-  
   return (
     <div>
       {/* Hero Section with improved responsive layout */}
@@ -110,8 +106,8 @@ const HomePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <div className="h-2 w-2 bg-green-400 rounded-full" />
-          <p className="text-green-400 text-sm font-medium">Open to Oppurtunities</p>
+          <div className="h-2 w-2 bg-green-400 rounded-full animate-pulse" />
+          <p className="text-green-400 text-sm font-medium">Freelancer • Open to Opportunities</p>
         </motion.div>
         
         <motion.h1 
@@ -134,15 +130,15 @@ const HomePage = () => {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <p className="text-zinc-400 text-lg px-2 lg:px-0">
-  Full Stack Developer and AI Integration Specialist passionate about building scalable, automated, and cloud-native software systems.
-</p>
+            I build websites and AI tools that bring you more customers. Full Stack Developer and AI Integration Specialist passionate about building scalable, automated, and cloud-native software systems.
+          </p>
           
           <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-            <Badge icon={<Code size={14} />} text="Developer" />
+            <Badge icon={<Code size={14} />} text="Freelancer" />
+            <Badge text="Developer" icon={undefined} />
             <Badge text="Django" icon={undefined} />
             <Badge text="React" icon={undefined} />
             <Badge text="AI/ML" icon={undefined} />
-            <Badge text="LLM" icon={undefined} />
           </div>
           
           <div className="flex flex-wrap gap-4 pt-2 justify-center lg:justify-start">
@@ -218,10 +214,10 @@ const HomePage = () => {
             >
               <h3 className="text-2xl font-bold text-white mb-4">My Journey</h3>
               <p className="text-neutral-300 mb-6">
-                Final-year B.Tech IT student at Anurag University with strong computer science fundamentals and hands-on experience in building scalable, automated, and cloud-native software systems. Skilled in full-stack development, workflow orchestration, and AI-driven integrations.
+                Final-year B.Tech IT student at Anurag University with strong computer science fundamentals and hands-on experience in building scalable, automated, and cloud-native software systems. I'm also a <span className="text-primary-400 font-semibold">freelance developer</span>, building websites and AI solutions for clients worldwide — from Australian IT consultancies to startups seeking growth through technology.
               </p>
               <p className="text-neutral-300 mb-6">
-                Passionate about creating reliable, distributed systems that improve connectivity, automation, and operational efficiency at scale. Experienced in LLM integration, NLP, workflow automation, and microservices architecture.
+                Passionate about creating reliable, distributed systems that improve connectivity, automation, and operational efficiency at scale. Experienced in LLM integration, NLP, workflow automation, microservices architecture, and delivering end-to-end solutions for freelance clients.
               </p>
               <Link to="/about" className="btn-primary">
                 Learn More About Me
@@ -280,6 +276,25 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Freelance Clients Section - after About, before Professional Journey */}
+      <section className="section-spacing bg-neutral-950">
+        <div className="container-custom">
+          <SectionTitle
+            subtitle="FREELANCE WORK"
+            title="Client Projects"
+            alignment="center"
+          />
+          <p className="text-neutral-400 text-center max-w-2xl mx-auto mb-12">
+            End-to-end web solutions for international clients — deployed, managed, and optimized for growth.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {freelanceProjects.map((project, index) => (
+              <FreelanceProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
       
       {/* Experience Section */}
       <section className="section-spacing bg-neutral-950 relative overflow-hidden">
@@ -299,18 +314,33 @@ const HomePage = () => {
           <div className="max-w-4xl mx-auto">
             {/* Timeline Container */}
             <div className="relative">
-              {/* Vertical Timeline Line */}
-              <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 via-secondary-500 to-primary-500 transform md:-translate-x-1/2" />
+              {/* Vertical Timeline Line - animated on scroll */}
+              <motion.div 
+                className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-neutral-700 transform md:-translate-x-1/2 overflow-hidden"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-b from-primary-500 via-secondary-500 to-primary-500"
+                style={{ transformOrigin: "top" }}
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.2 }}
+              />
+              </motion.div>
               
               {/* Experience Items */}
               <div className="space-y-12">
                 {/* Contract Web Developer */}
                 <motion.div
                   className="relative"
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 60 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7 }}
-                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   {/* Timeline Dot */}
                   <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-primary-500 rounded-full border-4 border-neutral-950 transform md:-translate-x-1/2 z-10" />
@@ -331,6 +361,10 @@ const HomePage = () => {
                     <div className="md:pl-8">
                       <motion.div
                         className="bg-neutral-800/70 backdrop-blur-sm rounded-xl p-6 border border-neutral-700 hover:border-primary-500/50 transition-all duration-300 group"
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        viewport={{ once: true }}
                         whileHover={{ y: -5, scale: 1.02 }}
                       >
                         {/* Mobile Date */}
@@ -393,10 +427,10 @@ const HomePage = () => {
                 {/* Freelance Full Stack Developer */}
                 <motion.div
                   className="relative"
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 60 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.2 }}
-                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   {/* Timeline Dot */}
                   <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-secondary-500 rounded-full border-4 border-neutral-950 transform md:-translate-x-1/2 z-10" />
@@ -410,6 +444,10 @@ const HomePage = () => {
                     <div className="md:pl-8">
                       <motion.div
                         className="bg-neutral-800/70 backdrop-blur-sm rounded-xl p-6 border border-neutral-700 hover:border-secondary-500/50 transition-all duration-300 group"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        viewport={{ once: true }}
                         whileHover={{ y: -5, scale: 1.02 }}
                       >
                         {/* Role Badge */}

@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
+import FreelanceProjectCard from '../components/FreelanceProjectCard';
 import { projects } from '../data/projects';
+import { freelanceProjects } from '../data/freelanceProjects';
 
 const ProjectsPage: React.FC = () => {
   const [filter, setFilter] = useState<string>('all');
@@ -43,7 +45,7 @@ const ProjectsPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
             >
-              A showcase of my work, featuring case studies and detailed project analyses.
+              Client work, case studies, and detailed project analyses — from freelance engagements to academic projects.
             </motion.p>
           </motion.div>
         </div>
@@ -52,13 +54,28 @@ const ProjectsPage: React.FC = () => {
       {/* Projects Grid */}
       <section className="section-spacing bg-neutral-950">
         <div className="container-custom">
+          {/* Freelance Client Work - shown first to highlight freelancing */}
+          <div className="mb-16">
+            <SectionTitle
+              subtitle="FREELANCE WORK"
+              title="Client Projects"
+              alignment="center"
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+              {freelanceProjects.map((project, index) => (
+                <FreelanceProjectCard key={project.id} project={project} index={index} />
+              ))}
+            </div>
+          </div>
+
+          {/* Academic & Personal Projects */}
           <SectionTitle
             subtitle="CASE STUDIES"
-            title="Explore My Projects"
+            title="Academic & Personal Projects"
             alignment="center"
           />
           
-          {/* Filter Categories */}
+          {/* Filter Categories - applies to academic projects only */}
           <motion.div
             className="mb-12 flex flex-wrap justify-center gap-3"
             initial={{ opacity: 0, y: 20 }}
@@ -83,7 +100,6 @@ const ProjectsPage: React.FC = () => {
               </motion.button>
             ))}
           </motion.div>
-          
           {/* Projects */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (

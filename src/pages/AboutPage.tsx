@@ -91,7 +91,7 @@ const AboutPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
             >
-              Full Stack Developer & AI Integration Specialist with hands-on experience in building scalable, automated, and cloud-native software systems.
+              Full Stack Developer, AI Integration Specialist & Freelancer — building scalable, automated, and cloud-native software systems. Available for new projects.
             </motion.p>
           </motion.div>
         </div>
@@ -115,7 +115,7 @@ const AboutPage: React.FC = () => {
                 <p>Final-year B.Tech IT student with strong computer science fundamentals and hands-on experience in building scalable, automated, and cloud-native software systems. Skilled in full-stack development, workflow orchestration, and AI-driven integrations.</p>
                 <p>Passionate about creating reliable, distributed systems that improve connectivity, automation, and operational efficiency at scale. Experienced in developing production-grade applications using React, TypeScript, Node.js, and Django, with expertise in LLM integration, NLP, and workflow automation tools like n8n and LangGraph.</p>
                 <p>My technical expertise spans the full software development lifecycle—from architecting microservices and RESTful APIs to implementing workflow orchestration and AI-powered features. I specialize in building systems that handle high concurrency, ensure fault tolerance, and leverage cloud infrastructure for scalable deployments.</p>
-                <p>Beyond technical skills, I value leadership and collaboration. As a core member of GDSC at Anurag University and through freelance work, I've delivered impactful solutions that demonstrate my commitment to using technology to make a meaningful difference.</p>
+                <p>Beyond technical skills, I value leadership and collaboration. As a core member of GDSC at Anurag University and as a <span className="text-primary-400 font-semibold">freelance developer</span> delivering end-to-end web solutions for international clients, I've delivered impactful solutions that demonstrate my commitment to using technology to make a meaningful difference.</p>
               </div>
               <div className="mt-8 flex gap-4">
                 <Link to="/contact" className="btn-primary">

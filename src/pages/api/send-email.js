@@ -48,7 +48,7 @@ export default async function handler(req, res) {
     // Email content
     const mailOptions = {
       from: process.env.SMTP_FROM_EMAIL || 'your-website@example.com',
-      to: recipient || 'swagathreddy128@gmail.com',
+      to: recipient || 'swagathreddykasula@gmail.com',
       replyTo: email,
       subject: `Website Contact Form: ${subject}`,
       html: `

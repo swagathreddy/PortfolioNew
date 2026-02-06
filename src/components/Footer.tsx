@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
     {
       name: 'Email',
       icon: <Mail size={20} />,
-      url: 'mailto:swagathreddy128@gmail.com',
+      url: 'mailto:swagathreddykasula@gmail.com',
       ariaLabel: 'Send an email',
     },
     {
@@ -92,10 +92,10 @@ const Footer: React.FC = () => {
               ))}
             </div>
             <a 
-              href="mailto:swagathreddy128@gmail.com"
+              href="mailto:swagathreddykasula@gmail.com"
               className="text-neutral-400 hover:text-primary-400 transition-colors block mb-2"
             >
-              swagathreddy128@gmail.com
+              swagathreddykasula@gmail.com
             </a>
             <a 
               href="tel:+916281116923"

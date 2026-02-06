@@ -1,11 +1,18 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
+import { Send, Mail, Phone } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 import emailjs from '@emailjs/browser';
 
+interface FormDataState {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
 const ContactPage: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataState>({
     name: '',
     email: '',
     subject: '',
@@ -18,7 +25,7 @@ const ContactPage: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev: FormDataState) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -30,9 +37,9 @@ const ContactPage: React.FC = () => {
       console.log('Submitting form data:', formData);
       
       // Replace these with your actual EmailJS values
-      const serviceId = 'service_nr1ofva'; // Get from EmailJS dashboard
-      const templateId = 'template_visggqo'; // Get from EmailJS dashboard
-      const publicKey = 'dHl9iuCOPt7P5UJ2p'; // Get from EmailJS dashboard
+      const serviceId = 'service_ydp3mux'; // Get from EmailJS dashboard
+      const templateId = 'template_z04o5jh'; // Get from EmailJS dashboard
+      const publicKey = 'tXESoTqVnHDv6nxaA'; // Get from EmailJS dashboard
       
       // Send the email using EmailJS
       const result = await emailjs.sendForm(
@@ -232,10 +239,10 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
                     <a 
-                      href="mailto:swagathreddy128@gmail.com" 
+                      href="mailto:swagathreddykasula@gmail.com" 
                       className="text-neutral-300 hover:text-primary-400 transition-colors"
                     >
-                      swagathreddy128@gmail.com
+                      swagathreddykasula@gmail.com
                     </a>
                   </div>
                 </motion.div>
