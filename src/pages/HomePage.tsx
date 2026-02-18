@@ -4,9 +4,9 @@ import { ChevronRight, Code } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
-import FreelanceProjectCard from '../components/FreelanceProjectCard';
 import { projects } from '../data/projects';
-import { freelanceProjects } from '../data/freelanceProjects';
+
+// Replace with your dedicated freelance website URL
 import SkillsPreview from '../components/SkillsPreview';
 import ProfileComposition from '../components/ProfileComposition';
 import MarqueeText from '../components/MarqueeText';
@@ -153,6 +153,17 @@ const HomePage = () => {
     </motion.button>
   </Link>
   
+  <a href={`https://www.swagathreddy.dev`} target="_blank" rel="noopener noreferrer">
+    <motion.button 
+      className="px-6 py-3 rounded-lg bg-white/10 text-white font-medium flex items-center gap-2 backdrop-blur-sm hover:bg-white/15 transition-colors border border-white/20"
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      View My Freelance Journey
+      <ChevronRight size={16} />
+    </motion.button>
+  </a>
+  
   <Link to="/contact">
     <motion.button 
       className="px-6 py-3 rounded-lg bg-white/10 text-white font-medium flex items-center gap-2 backdrop-blur-sm hover:bg-white/15 transition-colors"
@@ -276,26 +287,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
-      {/* Freelance Clients Section - after About, before Professional Journey */}
-      <section className="section-spacing bg-neutral-950">
-        <div className="container-custom">
-          <SectionTitle
-            subtitle="FREELANCE WORK"
-            title="Client Projects"
-            alignment="center"
-          />
-          <p className="text-neutral-400 text-center max-w-2xl mx-auto mb-12">
-            End-to-end web solutions for international clients — deployed, managed, and optimized for growth.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {freelanceProjects.map((project, index) => (
-              <FreelanceProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-      
       {/* Experience Section */}
       <section className="section-spacing bg-neutral-950 relative overflow-hidden">
         {/* Background decoration */}
